@@ -1,0 +1,35 @@
+Hello
+Thanks for your TiMidity++,
+but I find memory leak, and fixed them.
+instrum.c
+line 1367
+new code are:
+/*! Release ToneBank[128 + MAP_BANK_COUNT] */
+static void free_tone_bank_list(ToneBank *tb[])
+{
+	int i, j;
+	ToneBank *bank;
+	
+	//Zhao Lei modified
+	//for(i = 0; i < 128 + map_bank_counter; i++)
+	for(i = 0; i < 128 + MAP_BANK_COUNT; i++)
+	{
+		bank = tb[i];
+		if (!bank)
+			continue;
+		for (j = 0; j < 128; j++)
+			free_tone_bank_element(&bank->tone[j]);
+		//Zhao Lei added
+		if(bank->alt)
+		{
+			free(bank->alt);
+			bank->alt=NULL;
+		}
+		//Zhao Lei added
+		if (i > 0)
+		{
+			free(bank);
+			tb[i] = NULL;
+		}
+	}
+}

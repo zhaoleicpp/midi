@@ -1,0 +1,38 @@
+功能：
+把midi文件转化成wave文件。
+一切转换在内存中进行。
+CMidiToWave
+为调用接口
+使用的例子：
+#include "Library/MidiToWave/MidiToWave.h"
+void main()
+{
+    CFile midi,raw;
+    {
+        CFile source;
+        source.Open(_T("C:\\Important\\Project\\语音\\Big file\\background_music.mid"),FILE_OPEN_READ);
+        midi.Open(NULL,FILE_OPEN_MEMORY);
+        midi.SetLength(source.GetLength());
+        source.Read(midi.m_buffer,source.GetLength());
+        source.Close();
+        midi.SeekToBegin();
+    }
+    raw.Open(NULL,FILE_OPEN_MEMORY);
+    CMidiToWave::Go(raw,midi);
+    {
+        CFile dest;
+        dest.Open(_T("C:\\Important\\Project\\语音\\Big file\\from_midi.bin"),FILE_OPEN_WRITE|FILE_OPEN_CREATE);
+        dest.Write(raw.m_buffer,raw.GetLength());
+        dest.Close();
+    }
+}
+
+
+原始工程：
+代码下载地址
+https://master.dl.sourceforge.net/project/timidity
+https://sourceforge.net/projects/timidity/files/TiMidity%2B%2B/TiMidity%2B%2B-2.15.0/
+TiMidity++-2.15.0.tar.xz
+
+音色库编辑器
+https://www.polyphone-soundfonts.com/

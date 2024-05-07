@@ -1,0 +1,33 @@
+过门A        0 46 Stereo Harp
+过门B        1 99 Atmosphere 大气 过门
+主旋律A      2 36 Slap Bass  掌击Bass 1 
+主旋律B      3 11 Vibraphone  颤音琴 
+尾声A       11 88 Fantasia 
+尾声B       12 75 Pan Flute
+节拍A        4 117 Melodic Tom
+节拍B        5 118 Synth Drum 合成鼓 
+回音A        6 108 Kalimba 回音
+回音B        7 10 Music Box 八音盒
+升高A        8 116 Taiko Drum 太鼓 
+升高B        9
+声乐开始 钹 10 128:026 Dance
+升高B 钹    10 128:026 Dance
+最高音      10 128:026 Dance
+
+
+8 Celesta 钢片琴 回音C
+112 Thinker Bell 回音D
+
+候选
+128:008 Room kit 钹 最高音 声乐开始
+80 Square wave 回音
+25 Steel Guita 铁吉他
+51 Synth String2
+52 Choir Aahs
+53 Ohh Voice
+026 Jazz Guitar
+39 Synth Bass 2  
+45 Pizz Strings
+太大
+0 Grand Piano 大钢琴
+1 Bright Piano 明亮钢琴
