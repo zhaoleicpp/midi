@@ -1,0 +1,7 @@
+功能：
+把乐器事件调用转化成二进制的midi文件。
+接口类
+CMidi
+
+原始工程
+http://midifile.sapp.org
